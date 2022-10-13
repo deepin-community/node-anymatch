@@ -1,0 +1,35 @@
+Source: node-anymatch
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Aarti Kashyap <kaarti.sr@gmail.com>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , node-micromatch <!nocheck>
+ , node-normalize-path <!nocheck>
+ , node-arrify <!nocheck>
+ , mocha <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-anymatch
+Vcs-Git: https://salsa.debian.org/js-team/node-anymatch.git
+Homepage: https://github.com/es128/anymatch
+Rules-Requires-Root: no
+
+Package: node-anymatch
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , nodejs
+ , node-normalize-path
+Provides: ${nodejs:Provides}
+Description: Matches strings against configurable strings
+ Javascript module to match a string against a regular expression, glob, string,
+ or function that takes the string as an argument and returns a truthy or falsy
+ value. The matcher can also be an array of any or all of these. Useful for
+ allowing a very flexible user-defined config to define things like file paths.
+ .
+ It is a dependency for ava, a futuristic test-runner
+ .
+ Node.js is an event-based server-side JavaScript engine.

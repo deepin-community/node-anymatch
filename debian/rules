@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	find debian/node-anymatch/usr/share/nodejs/@types/picomatch -type f -exec chmod -x '{}' \;
+
+override_dh_installdocs:
+	dh_installdocs
+	mkdir -p debian/node-anymatch/usr/share/doc/node-picomatch
+	cp picomatch/*.md debian/node-anymatch/usr/share/doc/node-picomatch/
+	ln -s ../node-anymatch/changelog.Debian.gz debian/node-anymatch/usr/share/doc/node-picomatch/

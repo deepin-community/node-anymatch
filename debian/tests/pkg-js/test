@@ -1,0 +1,16 @@
+set -e
+RM=""
+if test ! -e picomatch/package.json; then
+	for f in /usr/share/nodejs/picomatch/*; do
+		ln -s $f picomatch/${f##*/}
+		RM="$RM picomatch/${f##*/}"
+	done
+	ls -l picomatch
+fi
+echo "# picomatch tests"
+(cd picomatch && mocha)
+echo "# anymatch tests"
+NODE_PATH=. mocha
+if test "$RM" != ""; then
+	rm -rf $RM
+fi
