@@ -1,13 +1,13 @@
 version=4
 opts=\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-anymatch-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-anymatch-$1/ \
  https://github.com/es128/anymatch/tags .*/archive/.*/v?([\d\.]+).tar.gz group
 
 opts=\
 dversionmangle=auto,ctype=nodejs,component=picomatch,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-picomatch-$1.tar.gz/ \
- https://github.com/micromatch/picomatch/releases .*/archive/.*/v?([\d\.]+).tar.gz checksum
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-picomatch-$1/ \
+ https://github.com/micromatch/picomatch/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
 
 # It is not recommended use npmregistry. Please investigate more.
 # Take a look at https://wiki.debian.org/debian/watch/
