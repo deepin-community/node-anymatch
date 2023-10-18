@@ -1,3 +1,3 @@
 # False positive
-source: source-contains-prebuilt-javascript-object picomatch/test/posix-classes.js line length is 290 characters (>256)
-source: source-is-missing picomatch/test/posix-classes.js line length is 290 characters (>256)
+source-is-missing picomatch/test/posix-classes.js
+source-contains-prebuilt-javascript-object picomatch/test/posix-classes.js
