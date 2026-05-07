@@ -1,3 +1,14 @@
+node-anymatch (3.1.3+~cs4.6.1-2deepin1) unstable; urgency=medium
+
+  * Security fixes for bundled picomatch (CVE-2026-33671, CVE-2026-
+    33672)  CVE-2026-33671: Fix ReDoS vulnerability in extglob patterns.
+    Adds maxExtglobRecursion option to limit nested quantified extglobs.
+    CVE-2026-33672: Fix method injection in POSIX character classes.
+    Adds __proto__: null to POSIX_REGEX_SOURCE.  Upstream:
+    https://github.com/micromatch/picomatch/compare/2.3.1...2.3.2
+
+ -- deepin-ci-robot <packages@deepin.org>  Thu, 07 May 2026 18:39:14 +0800
+
 node-anymatch (3.1.3+~cs4.6.1-2) unstable; urgency=medium
 
   * Team upload
